@@ -2,11 +2,11 @@
 <robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       xmlns:xacro="http://ros.org/wiki/xacro">
+       xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!--<xacro:include filename="$(find drz_urdf)/urdf/m600/camera.gazebo.xacro" />-->
 
-  <xacro:macro name="camera_sensor" params="camera_id parent:=base_link *origin">
+  <xacro:macro name="camera_sensor" params="camera_id parent:=base *origin">
     <!--<link name="camera_${camera_id}_link">-->
       <!--<visual>-->
         <!--<geometry>-->
