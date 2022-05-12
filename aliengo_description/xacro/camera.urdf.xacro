@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!--<xacro:include filename="$(find drz_urdf)/urdf/m600/camera.gazebo.xacro" />-->
+
+  <xacro:macro name="camera_sensor" params="camera_id parent:=base_link *origin">
+    <!--<link name="camera_${camera_id}_link">-->
+      <!--<visual>-->
+        <!--<geometry>-->
+          <!--<box size="0.01 0.005 0.005"/>-->
+        <!--</geometry>-->
+        <!--<material name="White"/>-->
+      <!--</visual>-->
+      <!--<collision>-->
+        <!--<geometry>-->
+          <!--<box size="0.01 0.005 0.005"/>-->
+        <!--</geometry>-->
+      <!--</collision>-->
+      <!--<inertial>-->
+        <!--<mass value="0.1"/>-->
+        <!--<inertia ixx="0.00005" ixy="0.0" ixz="0.0" iyy="0.00005" iyz="0.0" izz="0.00005"/>-->
+      <!--</inertial>-->
+    <!--</link>-->
+
+    <joint name="${camera_id}_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${camera_id}"/>
+    </joint>
+
+    <link name="${camera_id}">
+      <inertial>
+        <mass value="0.01"/>
+        <inertia ixx="0.00005" ixy="0.0" ixz="0.0" iyy="0.00005" iyz="0.0" izz="0.00005"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <box size="0.02 0.02 0.02"/>
+        </geometry>
+        <material name="Black"/>
+      </visual>
+<!--
+      <visual>
+        <origin xyz="0. 0. 0.015"/>
+        <geometry>
+          <cylinder radius="0.0075" length="0.01" />
+        </geometry>
+        <material name="Black"/>
+      </visual>
+      <visual>
+        <origin xyz="0. 0. 0.0325"/>
+        <geometry>
+          <cylinder radius="0.0125" length="0.025" />
+        </geometry>
+        <material name="Black"/>
+      </visual>
+-->
+      <collision>
+        <geometry>
+          <box size="0.02 0.02 0.02"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!--<joint name="camera_${camera_id}_optical_frame_joint" type="fixed">-->
+      <!--<origin xyz="0 0 0" rpy="${sign * -pi/2} 0 ${sign * -pi/2}" />-->
+      <!--<parent link="camera_${camera_id}_link"/>-->
+      <!--<child link="camera${camera_id}"/>-->
+    <!--</joint>-->
+    <!--<xacro:SRF_10_sonar_sensor name="sonar_${sonar_id}" angle="0" />-->
+  </xacro:macro>
+
+</robot>
+
+

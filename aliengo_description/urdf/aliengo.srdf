@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<robot name="aliengo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <group name="base">
+      <link name="trunk"/>
+    </group>
+
+    <group name="imu">
+      <link name="trunk"/>
+    </group>
+
+    <group name="FL_leg">
+      <chain base_link="trunk" tip_link="FL_foot"/>
+      <joint name="FL_hip_joint"/>
+      <joint name="FL_thigh_joint"/>
+      <joint name="FL_calf_joint"/>
+    </group>
+
+    <group name="FR_leg">
+      <chain base_link="trunk" tip_link="FR_foot"/>
+      <joint name="FR_hip_joint"/>
+      <joint name="FR_thigh_joint"/>
+      <joint name="FR_calf_joint"/>
+    </group>
+
+    <group name="RL_leg">
+      <chain base_link="trunk" tip_link="RL_foot"/>
+      <joint name="RL_hip_joint"/>
+      <joint name="RL_thigh_joint"/>
+      <joint name="RL_calf_joint"/>
+    </group>
+
+    <group name="RR_leg">
+      <chain base_link="trunk" tip_link="RR_foot"/>
+      <joint name="RR_hip_joint"/>
+      <joint name="RR_thigh_joint"/>
+      <joint name="RR_calf_joint"/>
+    </group>
+
+    <group name="FL_hip">
+      <chain base_link="trunk" tip_link="FL_hip"/>
+    </group>
+
+    <group name="FR_hip">
+      <chain base_link="trunk" tip_link="FR_hip"/>
+    </group>
+
+    <group name="RL_hip">
+      <chain base_link="trunk" tip_link="RL_hip"/>
+    </group>
+
+    <group name="RR_hip">
+      <chain base_link="trunk" tip_link="RR_hip"/>
+    </group>
+
+    <group name="chains">
+      <group name="FL_leg"/>
+      <group name="FR_leg"/>
+      <group name="RL_leg"/>
+      <group name="RR_leg"/>
+    </group>
+
+</robot>

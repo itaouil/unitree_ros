@@ -13,6 +13,8 @@ add_message_files(
   MotorCmd.msg
   MotorState.msg
   MotorStateLight.msg
+  BmsCmd.msg
+  BmsState.msg
   Cartesian.msg
   IMU.msg
   LED.msg
