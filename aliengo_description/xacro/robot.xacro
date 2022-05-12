@@ -124,7 +124,13 @@
         </collision>
     </link>
 
-    <xacro:camera_sensor parent="base" camera_id="t265_link">
+    <joint name="t265_joint" type="fixed">
+        <parent link="t265_pose_frame"/>
+        <child link="t265_link"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+    </joint>
+
+    <xacro:camera_sensor parent="base" camera_id="t265_pose_frame">
         <origin xyz="0.33118 0 0" rpy="0 0.244346 0"/>
     </xacro:camera_sensor>
 
