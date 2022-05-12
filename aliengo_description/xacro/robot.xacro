@@ -6,7 +6,7 @@
     <xacro:include filename="$(find aliengo_description)/xacro/materials.xacro"/>
     <xacro:include filename="$(find aliengo_description)/xacro/leg.xacro"/>
     <xacro:include filename="$(find aliengo_description)/xacro/gazebo.xacro"/>
-    <xacro:include filename="$(find aliengo_description)/xacro/camera.urdf.xacro"/>
+    <xacro:include filename="$(find aliengo_description)/xacro/camera.xacro"/>
 
     <!-- Rollover Protection mode will add an additional stick on the top, use "true" or "false" to switch it. -->
     <xacro:property name="rolloverProtection" value="false"/>
