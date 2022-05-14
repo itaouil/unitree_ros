@@ -22,6 +22,8 @@ add_message_files(
   LowState.msg
   HighCmd.msg
   HighState.msg
+  HighCmdStamped.msg
+  HighStateStamped.msg
 )
 
 generate_messages(
